@@ -8,13 +8,18 @@
         var google = L.tileLayer('https://{s}.google.com/vt/lyrs=s,h&x={x}&y={y}&z={z}', 
             { zIndex: 50, opacity: 1, maxZoom: 24, subdomains: ["mt0", "mt1", "mt2", "mt3"] 
             });
-
+        /*
         var map = L.map('map', {
             center: [29.3, 76.0856],
             zoom: 8
         }).addLayer(google);
+        */
 
-
+        var map = L.map('map', {
+            zoomControl:true, maxZoom:15, minZoom:12
+        }).fitBounds([[-16.598890870732117,-49.23861609731575],
+            [-16.41486002031117,-48.81674092392335]]).addLayer(google);
+        
 
         var style = {
             color: 'yellow',
